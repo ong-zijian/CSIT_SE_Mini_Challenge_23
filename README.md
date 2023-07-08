@@ -26,3 +26,11 @@ For this route, the functionality will be to:
 - Validate availability
 - Calculate total price
 5. Return sorted final array in json format
+
+Note to self:
+docker build -t smuozj/rabbit_se_challenge:1.0.0 -f server.Dockerfile .
+docker push smuozj/rabbit_se_challenge:1.0.0
+
+### To Pull
+docker pull smuozj/rabbit_se_challenge:1.0.0
+docker run -p 8080 smuozj/rabbit_se_challenge:1.0.0
