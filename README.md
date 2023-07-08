@@ -27,8 +27,8 @@ For this route, the functionality will be to:
 - Calculate total price
 5. Return sorted final array in json format
 
-Note to self:
-docker build -t smuozj/rabbit_se_challenge:1.0.0 -f server.Dockerfile .
+Note to self:<br>
+docker build -t smuozj/rabbit_se_challenge:1.0.0 -f server.Dockerfile .<br>
 docker push smuozj/rabbit_se_challenge:1.0.0
 
 ### To Pull
