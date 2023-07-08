@@ -3,8 +3,7 @@ FROM node:18
 WORKDIR /app
 
 ADD package*.json ./
-ADD server.js server.js
-ADD serverConn.js serverConn.js
+ADD server2.js server2.js
 
 # Install the application dependencies
 RUN npm install
@@ -12,4 +11,4 @@ RUN npm install
 EXPOSE 8080
 
 # Start the application
-CMD [ "node", "./serverConn.js" ]
+CMD [ "node", "./server2.js" ]

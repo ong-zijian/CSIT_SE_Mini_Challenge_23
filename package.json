@@ -2,10 +2,10 @@
   "name": "csit_se_mini_challenge_23",
   "version": "1.0.0",
   "description": "CSIT SE Mini Challenge 2023",
-  "main": "serverConn.js",
+  "main": "server2.js",
   "scripts": {
-    "test": "node serverConn.js",
-    "start": "node ./server.js"
+    "test": "node server2.js",
+    "start": "node ./server2.js"
   },
   "repository": {
     "type": "git",
