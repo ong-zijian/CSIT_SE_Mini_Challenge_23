@@ -27,10 +27,18 @@ For this route, the functionality will be to:
 - Calculate total price
 5. Return sorted final array in json format
 
-Note to self:<br>
+Note to self (uploading the image):<br>
 docker build -t smuozj/rabbit_se_challenge:1.0.0 -f server.Dockerfile .<br>
 docker push smuozj/rabbit_se_challenge:1.0.0
 
 ### To Pull
-docker pull smuozj/rabbit_se_challenge:1.0.0
-docker run -p 8080 smuozj/rabbit_se_challenge:1.0.0
+1. Ensure that you have installed docker
+2. Run docker desktop app
+3. Run `docker pull smuozj/rabbit_se_challenge:1.0.0`
+4. Run `docker run -p 8080 smuozj/rabbit_se_challenge:1.0.0` wait till you see "Pinged your deployment. You successfully connected to MongoDB!"
+5. Go to docker desktop and check the port number. it will show like `44321:8080`. Hover over and it will show you what is the url. Usually it will be like `http://localhost:44321`
+
+### To run:
+Go to Postman or Chrome and run get commands:
+- `/flight?departureDate=2023-12-10&returnDate=2023-12-16&destination=Frankfurt`
+- `/hotel?checkInDate=2023-12-10&checkOutDate=2023-12-16&destination=Frankfurt`
