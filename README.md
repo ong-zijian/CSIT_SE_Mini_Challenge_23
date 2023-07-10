@@ -40,5 +40,5 @@ docker push smuozj/rabbit_se_challenge:1.0.0
 
 ### To run:
 Go to Postman or Chrome and run get commands:
-- `/flight?departureDate=2023-12-10&returnDate=2023-12-16&destination=Frankfurt`
-- `/hotel?checkInDate=2023-12-10&checkOutDate=2023-12-16&destination=Frankfurt`
+- `http://localhost:<insert-port-number>/flight?departureDate=2023-12-10&returnDate=2023-12-16&destination=Frankfurt`
+- `http://localhost:<insert-port-number>/hotel?checkInDate=2023-12-10&checkOutDate=2023-12-16&destination=Frankfurt`
