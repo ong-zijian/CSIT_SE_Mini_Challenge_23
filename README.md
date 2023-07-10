@@ -34,9 +34,10 @@ docker push smuozj/rabbit_se_challenge:1.0.0
 ### To Pull
 1. Ensure that you have installed docker
 2. Run docker desktop app
-3. Run `docker pull smuozj/rabbit_se_challenge:1.0.0`
-4. Run `docker run -p 8080 smuozj/rabbit_se_challenge:1.0.0` wait till you see "Pinged your deployment. You successfully connected to MongoDB!"
-5. Go to docker desktop and check the port number. it will show like `44321:8080`. Hover over and it will show you what is the url. Usually it will be like `http://localhost:44321`
+3. Open a terminal window
+4. Run `docker pull smuozj/rabbit_se_challenge:1.0.0`
+5. Run `docker run -p 8080 smuozj/rabbit_se_challenge:1.0.0` wait till you see "Pinged your deployment. You successfully connected to MongoDB!"
+6. Go to docker desktop and check the port number. it will show like `44321:8080`. Hover over and it will show you what is the url. Usually it will be like `http://localhost:44321`
 
 ### To run:
 Go to Postman or Chrome and run get commands:
