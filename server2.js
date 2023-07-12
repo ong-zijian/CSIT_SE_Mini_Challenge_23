@@ -118,6 +118,7 @@ router.get("/flight", async (req, res) => {
           const totalPrice = departureFlight.price + returnFlight.price;
           flightCombinations.push([
             {
+              "City":destination,
               "Departure Date": departureDate,
               "Departure Airline": departureFlight.airlinename,
               "Departure Price": departureFlight.price,
