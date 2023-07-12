@@ -73,17 +73,24 @@ router.get("/flight", async (req, res) => {
       }
 
       // Validate the departureDate format
-    if (!isValidISODate(departureDate) || !isValidISODate(returnDate)) {
-        const error = []
-        if (!isValidISODate(departureDate)) {
-            error.push("Departure Date");
-          }
-          if (!isValidISODate(returnDate)) {
-            error.push("Return Date");
-          }
-          console.log(`Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.`)
-        return res.status(400).json({ code: 400, error: `Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.` });
+      if (!isValidISODate(departureDate) || !isValidISODate(returnDate)) {
+          const error = []
+          if (!isValidISODate(departureDate)) {
+              error.push("Departure Date");
+            }
+            if (!isValidISODate(returnDate)) {
+              error.push("Return Date");
+            }
+            console.log(`Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.`)
+          return res.status(400).json({ code: 400, error: `Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.` });
       }
+
+      // validate destination data type
+      if (!destination || typeof destination !== "string" || /[0-9~`!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]/.test(destination)) {
+        console.log("(Code 400) Bad Request: Destination should be a valid string without numbers or special characters");
+        return res.status(400).json({ code: 400, error: "Bad Request: Destination should be a valid string without numbers or special characters" });
+      }
+
   
       // Query for the departure flight based on departure date and destination
       const departureQuery = {
@@ -184,6 +191,12 @@ router.get("/hotel", async (req, res) => {
             }
             console.log(`(Code 400) Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.`)
             return res.status(400).json({code: 400, error: `Bad Request: Invalid date format for: ${error.join(", ")}. Please provide a valid ISO date.` });
+        }
+
+        // validate destination data type
+        if (!destination || typeof destination !== "string" || /[0-9~`!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]/.test(destination)) {
+          console.log("(Code 400) Bad Request: Destination should be a valid string without numbers or special characters");
+          return res.status(400).json({ code: 400, error: "Bad Request: Destination should be a valid string without numbers or special characters" });
         }
 
         // Query the hotels by destination
